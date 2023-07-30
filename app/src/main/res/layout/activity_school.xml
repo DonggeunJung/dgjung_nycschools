@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable name="school" type="com.example.dgjung_nycschools.data.School"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_back"
+            android:onClick="onBtnBack"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/activity_title"
+            android:text="@{school.school_name}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ScrollView
+            android:id="@+id/scollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingHorizontal="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    style="@style/field_layout"
+                    android:visibility="@{school.num_of_sat_test_takers == null ? View.GONE : View.VISIBLE}">
+
+                    <TextView
+                        style="@style/field_title"
+                        android:text="@string/tag_sat_test_takers" />
+
+                    <TextView
+                        style="@style/field_content"
+                        android:text="@{school.num_of_sat_test_takers}" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/field_layout"
+                    android:visibility="@{school.sat_critical_reading_avg_score == null ? View.GONE : View.VISIBLE}">
+
+                <TextView
+                        style="@style/field_title"
+                        android:text="@string/tag_sat_reading_score" />
+
+                    <TextView
+                        style="@style/field_content"
+                        android:text="@{school.sat_critical_reading_avg_score}" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/field_layout"
+                    android:visibility="@{school.sat_math_avg_score == null ? View.GONE : View.VISIBLE}">
+
+                    <TextView
+                        style="@style/field_title"
+                        android:text="@string/tag_sat_math_score" />
+
+                    <TextView
+                        style="@style/field_content"
+                        android:text="@{school.sat_math_avg_score}" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/field_layout"
+                    android:visibility="@{school.sat_writing_avg_score == null ? View.GONE : View.VISIBLE}">
+
+                    <TextView
+                        style="@style/field_title"
+                        android:text="@string/tag_sat_writing_score" />
+
+                    <TextView
+                        style="@style/field_content"
+                        android:text="@{school.sat_writing_avg_score}" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/field_layout">
+
+                    <TextView
+                        style="@style/field_title"
+                        android:text="@string/tag_location" />
+
+                    <TextView
+                        style="@style/field_content"
+                        android:text="@{school.location}" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/field_layout">
+
+                    <TextView
+                        style="@style/field_title"
+                        android:text="@string/tag_phonenumber" />
+
+                    <TextView
+                        style="@style/field_content"
+                        android:text="@{school.phone_number}" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/field_layout">
+
+                    <TextView
+                        style="@style/field_title"
+                        android:text="@string/tag_faxnumber" />
+
+                    <TextView
+                        style="@style/field_content"
+                        android:text="@{school.fax_number}" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/field_layout">
+
+                    <TextView
+                        style="@style/field_title"
+                        android:text="@string/tag_schoolemail" />
+
+                    <TextView
+                        style="@style/field_content"
+                        android:text="@{school.school_email}" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/field_layout">
+
+                    <TextView
+                        style="@style/field_title"
+                        android:text="@string/tag_website" />
+
+                    <TextView
+                        style="@style/field_content"
+                        android:text="@{school.website}" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/field_layout">
+
+                    <TextView
+                        style="@style/field_title"
+                        android:text="@string/tag_overview" />
+
+                    <TextView
+                        style="@style/field_content"
+                        android:text="@{school.overview_paragraph}" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/field_list_layout"
+                    android:visibility="@{school.academicopportunities1 == null ? View.GONE : View.VISIBLE}">
+
+                    <TextView
+                        style="@style/field_title"
+                        android:text="@string/tag_academicopportunities" />
+
+                    <TextView
+                        android:id="@+id/tvAcademicopportunities"
+                        style="@style/field_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/field_list_layout"
+                    android:visibility="@{school.prgdesc1 == null ? View.GONE : View.VISIBLE}">
+
+                    <TextView
+                        style="@style/field_title"
+                        android:text="@string/tag_prgdesc" />
+
+                    <TextView
+                        android:id="@+id/tvPrgdesc"
+                        style="@style/field_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/field_list_layout"
+                    android:visibility="@{school.directions1 == null ? View.GONE : View.VISIBLE}">
+
+                    <TextView
+                        style="@style/field_title"
+                        android:text="@string/tag_directions" />
+
+                    <TextView
+                        android:id="@+id/tvDirections"
+                        style="@style/field_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

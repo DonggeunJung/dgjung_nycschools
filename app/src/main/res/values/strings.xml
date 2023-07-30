@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">20230731-DonggeunJung-NYCSchools</string>
+    <string name="tag_dbn" tools:ignore="ExtraTranslation">dbn</string>
+    <string name="tag_sat_test_takers" tools:ignore="ExtraTranslation">Sat test takers</string>
+    <string name="tag_sat_reading_score" tools:ignore="ExtraTranslation">Sat reading score</string>
+    <string name="tag_sat_math_score" tools:ignore="ExtraTranslation">Sat math score</string>
+    <string name="tag_sat_writing_score" tools:ignore="ExtraTranslation">Sat writing score</string>
+    <string name="tag_location" tools:ignore="ExtraTranslation">Location</string>
+    <string name="tag_phonenumber" tools:ignore="ExtraTranslation">Phone</string>
+    <string name="tag_faxnumber" tools:ignore="ExtraTranslation">Fax</string>
+    <string name="tag_schoolemail" tools:ignore="ExtraTranslation">Email</string>
+    <string name="tag_website" tools:ignore="ExtraTranslation">Website</string>
+    <string name="tag_overview" tools:ignore="ExtraTranslation">Overview</string>
+    <string name="tag_academicopportunities" tools:ignore="ExtraTranslation">Academic opportunities</string>
+    <string name="tag_prgdesc" tools:ignore="ExtraTranslation">Program description</string>
+    <string name="tag_directions" tools:ignore="ExtraTranslation">Directions</string>
+</resources>
