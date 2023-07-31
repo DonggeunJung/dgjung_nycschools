@@ -20,9 +20,6 @@ public class SchoolRvAdapter extends RecyclerView.Adapter<SchoolRvAdapter.School
     List<SchoolItem> schoolItems;
     AppCompatActivity activity;
 
-    @Inject
-    public SchoolRvAdapter() {}
-
     public void setObserver(AppCompatActivity activity, SchoolViewModel viewModel) {
         this.activity = activity;
         this.viewModel = viewModel;
