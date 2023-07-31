@@ -21,13 +21,14 @@
 <div>
 <img src="https://github.com/DonggeunJung/dgjung_nycschools/blob/main/dgjung_nycschools_sc03.png?raw=true width="360px" height="600px"></img>
 </div>
-</div>
+<br>
+<br>
 [Image4 : Detail information-2]
 <br>
 <div>
 <img src="https://github.com/DonggeunJung/dgjung_nycschools/blob/main/dgjung_nycschools_sc04.png?raw=true width="360px" height="600px"></img>
 </div>
-</div>
+<br>
 <br>
 < Used Skills ><br>
 1. AndroidX<br>
