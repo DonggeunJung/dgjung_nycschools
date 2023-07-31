@@ -10,20 +10,24 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 
+// Dependency Injection Module class.
 @Module
 public class DiModule {
+    // Make instance of Retrofit API
     @Provides
     @Singleton
     SchoolApi provideSchoolApi() {
         return SchoolApi.retrofit.create(SchoolApi.class);
     }
 
+    // Make instance of Database DAO
     @Provides
     @Singleton
     SchoolDao provideSchoolDao() {
         return Room.databaseBuilder(App.context, SchoolDB.class, "book_db").build().schoolDao();
     }
 
+    // Make instance of RecyclerView adapter
     @Provides
     @Singleton
     SchoolRvAdapter provideSchoolRvAdapter() {

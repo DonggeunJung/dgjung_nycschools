@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+// School data class for list item.
 @Entity
 public class SchoolItem {
     @PrimaryKey
@@ -11,11 +12,5 @@ public class SchoolItem {
     public String dbn;
     public String school_name;
     public String location;
-
-    public SchoolItem(String dbn, String school_name, String location) {
-        this.dbn = dbn;
-        this.school_name = school_name;
-        this.location = location;
-    }
 
 }
