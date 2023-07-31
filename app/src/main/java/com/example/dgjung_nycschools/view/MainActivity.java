@@ -6,16 +6,21 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import com.example.dgjung_nycschools.App;
 import com.example.dgjung_nycschools.R;
 import com.example.dgjung_nycschools.data.SchoolItem;
 import com.example.dgjung_nycschools.databinding.ActivityMainBinding;
 import java.util.List;
+import javax.inject.Inject;
 
 public class MainActivity extends BaseActivity {
     ActivityMainBinding binding;
+    @Inject
+    SchoolRvAdapter adapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        App.diComponent.inject(this);
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
@@ -24,7 +29,7 @@ public class MainActivity extends BaseActivity {
 
     // Init RecyclerView adapter & Request School list to server
     public void initList() {
-        SchoolRvAdapter adapter = SchoolRvAdapter.getInstance(this, viewModel);
+        adapter.setObserver(this, viewModel);
         binding.rvSchool.setAdapter(adapter);
         binding.rvSchool.setLayoutManager(new LinearLayoutManager(this,
                 LinearLayoutManager.VERTICAL, false));

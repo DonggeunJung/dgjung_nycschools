@@ -13,14 +13,17 @@ import com.example.dgjung_nycschools.data.SchoolItem;
 import com.example.dgjung_nycschools.databinding.SchoolItemBinding;
 import com.example.dgjung_nycschools.viewmodel.SchoolViewModel;
 import java.util.List;
+import javax.inject.Inject;
 
 public class SchoolRvAdapter extends RecyclerView.Adapter<SchoolRvAdapter.SchoolVH> {
     SchoolViewModel viewModel;
     List<SchoolItem> schoolItems;
     AppCompatActivity activity;
-    static SchoolRvAdapter instance = null;
 
-    public SchoolRvAdapter(AppCompatActivity activity, SchoolViewModel viewModel) {
+    @Inject
+    public SchoolRvAdapter() {}
+
+    public void setObserver(AppCompatActivity activity, SchoolViewModel viewModel) {
         this.activity = activity;
         this.viewModel = viewModel;
         final Observer<List<SchoolItem>> schoolItemsObserver = schoolItems -> {
@@ -28,12 +31,6 @@ public class SchoolRvAdapter extends RecyclerView.Adapter<SchoolRvAdapter.School
             this.notifyDataSetChanged();
         };
         viewModel.lvSchoolItems.observe(activity, schoolItemsObserver);
-    }
-
-    public static SchoolRvAdapter getInstance(AppCompatActivity parent, SchoolViewModel viewModel) {
-        if(instance == null)
-            instance = new SchoolRvAdapter(parent, viewModel);
-        return instance;
     }
 
     // Return list items count

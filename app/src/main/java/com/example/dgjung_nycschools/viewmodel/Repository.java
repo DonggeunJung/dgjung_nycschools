@@ -1,15 +1,15 @@
 package com.example.dgjung_nycschools.viewmodel;
 
-import android.content.Context;
 import android.util.Log;
+import com.example.dgjung_nycschools.App;
 import com.example.dgjung_nycschools.data.School;
 import com.example.dgjung_nycschools.data.SchoolItem;
 import com.example.dgjung_nycschools.data.SchoolScore;
 import com.example.dgjung_nycschools.model.SchoolApi;
-import com.example.dgjung_nycschools.model.SchoolDB;
 import com.example.dgjung_nycschools.model.SchoolDao;
 import java.util.ArrayList;
 import java.util.List;
+import javax.inject.Inject;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -18,20 +18,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Repository {
-    Context context;
-    static Repository instance = null;
-    SchoolApi api = SchoolApi.retrofit.create(SchoolApi.class);
+    @Inject
+    SchoolApi api;
+    @Inject
     SchoolDao schoolDao;
 
-    public Repository(Context context) {
-        this.context = context;
-        schoolDao = SchoolDB.getInstance(context).schoolDao();
-    }
-
-    public static Repository getInstance(Context context) {
-        if(instance == null)
-            instance = new Repository(context);
-        return instance;
+    @Inject
+    public Repository() {
+        App.diComponent.inject(this);
     }
 
     public void reqSchools() {

@@ -1,35 +1,26 @@
 package com.example.dgjung_nycschools.viewmodel;
 
-import android.content.Context;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelStoreOwner;
 import com.example.dgjung_nycschools.data.School;
 import com.example.dgjung_nycschools.data.SchoolItem;
-
 import java.util.ArrayList;
 import java.util.List;
-
+import javax.inject.Inject;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 public class SchoolViewModel extends ViewModel implements Repository.RepoListener {
-    static Context context;
     Repository repository;
     List<SchoolItem> schoolItems;
     public MutableLiveData<List<SchoolItem>> lvSchoolItems = new MutableLiveData<>();
     public MutableLiveData<School> lvCurrSchool = new MutableLiveData<>();
 
-    public SchoolViewModel() {
-        repository = Repository.getInstance(context);
+    @Inject
+    public SchoolViewModel(Repository repository) {
+        this.repository = repository;
         repository.setListener(this);
-    }
-
-    public static SchoolViewModel getInstance(Context context) {
-        SchoolViewModel.context = context;
-        return new ViewModelProvider((ViewModelStoreOwner) context, ViewModelFactory.provideViewModelFactory()).get(SchoolViewModel.class);
     }
 
     public void reqSchools() {
