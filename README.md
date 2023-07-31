@@ -4,21 +4,29 @@
 <br>
 [Image1 : All school list]
 <br>
+<div>
+<img src="https://github.com/DonggeunJung/dgjung_nycschools/blob/main/dgjung_nycschools_sc01.png?raw=true width="360px" height="600px"></img>
+</div>
+<br>
+<br>
 [Image2 : Searched school list]
 <br>
 <div>
-<img src="https://github.com/DonggeunJung/dgjung_nycschools/blob/main/dgjung_nycschools_sc01.png?raw=true width="360px" height="600px"></img>
 <img src="https://github.com/DonggeunJung/dgjung_nycschools/blob/main/dgjung_nycschools_sc02.png?raw=true width="360px" height="600px"></img>
 </div>
 <br>
 <br>
 [Image3 : Detail information-1]
 <br>
+<div>
+<img src="https://github.com/DonggeunJung/dgjung_nycschools/blob/main/dgjung_nycschools_sc03.png?raw=true width="360px" height="600px"></img>
+</div>
+</div>
 [Image4 : Detail information-2]
 <br>
 <div>
-<img src="https://github.com/DonggeunJung/dgjung_nycschools/blob/main/dgjung_nycschools_sc03.png?raw=true width="360px" height="600px"></img>
 <img src="https://github.com/DonggeunJung/dgjung_nycschools/blob/main/dgjung_nycschools_sc04.png?raw=true width="360px" height="600px"></img>
+</div>
 </div>
 <br>
 < Used Skills ><br>
@@ -29,7 +37,7 @@
 5. Retrofit<br>
 6. Room<br>
 7. Dagger2<br>
-8. UI style<br>
+8. UI - ConstraintLayout, RecyclerView, Style<br>
 <br>
 <br>
 < Additional Infomation >
