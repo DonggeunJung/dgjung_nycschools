@@ -1,5 +1,5 @@
-# dgjung_nycschools
-[Android & Java & MVVM] 20230731-DonggeunJung-NYCSchools
+# 20230731-DonggeunJung-NYCSchools
+[Android & Java & MVVM] 2017 DOE High School Directory
 
 <br>
 [Image1 : All school list]
