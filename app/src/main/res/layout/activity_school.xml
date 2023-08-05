@@ -44,60 +44,135 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    style="@style/field_layout"
-                    android:visibility="@{school.num_of_sat_test_takers == null ? View.GONE : View.VISIBLE}">
+                    style="@style/divider_h"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/group_layout"
+                    android:visibility="@{school.sat_total() == null ? View.GONE : View.VISIBLE}">
 
                     <TextView
-                        style="@style/field_title"
-                        android:text="@string/tag_sat_test_takers" />
+                        android:id="@+id/tvScoresTitle"
+                        style="@style/group_title"
+                        android:text="SAT SCORES"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toTopOf="@+id/layoutReading"
+                        app:layout_constraintStart_toStartOf="parent"/>
 
-                    <TextView
-                        style="@style/field_content"
-                        android:text="@{school.num_of_sat_test_takers}" />
+                    <LinearLayout
+                        android:id="@+id/layoutReading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginVertical="10dp"
+                        android:layout_marginHorizontal="10dp"
+                        app:layout_constraintTop_toBottomOf="@+id/tvScoresTitle"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/layoutMath">
 
-                </LinearLayout>
+                        <TextView
+                            style="@style/field_title"
+                            android:text="@string/tag_sat_reading_score" />
+
+                        <TextView
+                            style="@style/field_content"
+                            android:layout_margin="0dp"
+                            android:text="@{school.sat_critical_reading_avg_score}" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layoutMath"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginHorizontal="10dp"
+                        app:layout_constraintTop_toTopOf="@+id/layoutReading"
+                        app:layout_constraintBottom_toBottomOf="@+id/layoutReading"
+                        app:layout_constraintStart_toEndOf="@+id/layoutReading"
+                        app:layout_constraintEnd_toStartOf="@+id/layoutWritting">
+
+                        <TextView
+                            style="@style/field_title"
+                            android:text="@string/tag_sat_math_score" />
+
+                        <TextView
+                            style="@style/field_content"
+                            android:layout_margin="0dp"
+                            android:text="@{school.sat_math_avg_score}" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layoutWritting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginHorizontal="10dp"
+                        app:layout_constraintTop_toTopOf="@+id/layoutReading"
+                        app:layout_constraintBottom_toBottomOf="@+id/layoutReading"
+                        app:layout_constraintStart_toEndOf="@+id/layoutMath"
+                        app:layout_constraintEnd_toStartOf="@+id/layoutTotal">
+
+                        <TextView
+                            style="@style/field_title"
+                            android:text="@string/tag_sat_writing_score" />
+
+                        <TextView
+                            style="@style/field_content"
+                            android:layout_margin="0dp"
+                            android:text="@{school.sat_writing_avg_score}" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layoutTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginHorizontal="10dp"
+                        app:layout_constraintTop_toTopOf="@+id/layoutReading"
+                        app:layout_constraintBottom_toBottomOf="@+id/layoutReading"
+                        app:layout_constraintStart_toEndOf="@+id/layoutWritting"
+                        app:layout_constraintEnd_toStartOf="@+id/layoutTestTakers">
+
+                        <TextView
+                            style="@style/field_title"
+                            android:text="@string/tag_sat_total" />
+
+                        <TextView
+                            style="@style/field_content"
+                            android:layout_margin="0dp"
+                            android:text="@{school.sat_total()}" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layoutTestTakers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginHorizontal="10dp"
+                        app:layout_constraintTop_toTopOf="@+id/layoutReading"
+                        app:layout_constraintBottom_toBottomOf="@+id/layoutReading"
+                        app:layout_constraintStart_toEndOf="@+id/layoutTotal"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <TextView
+                            style="@style/field_title"
+                            android:text="@string/tag_sat_test_takers" />
+
+                        <TextView
+                            style="@style/field_content"
+                            android:layout_margin="0dp"
+                            android:text="@{school.num_of_sat_test_takers}" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <LinearLayout
-                    style="@style/field_layout"
-                    android:visibility="@{school.sat_critical_reading_avg_score == null ? View.GONE : View.VISIBLE}">
-
-                <TextView
-                        style="@style/field_title"
-                        android:text="@string/tag_sat_reading_score" />
-
-                    <TextView
-                        style="@style/field_content"
-                        android:text="@{school.sat_critical_reading_avg_score}" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    style="@style/field_layout"
-                    android:visibility="@{school.sat_math_avg_score == null ? View.GONE : View.VISIBLE}">
-
-                    <TextView
-                        style="@style/field_title"
-                        android:text="@string/tag_sat_math_score" />
-
-                    <TextView
-                        style="@style/field_content"
-                        android:text="@{school.sat_math_avg_score}" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    style="@style/field_layout"
-                    android:visibility="@{school.sat_writing_avg_score == null ? View.GONE : View.VISIBLE}">
-
-                    <TextView
-                        style="@style/field_title"
-                        android:text="@string/tag_sat_writing_score" />
-
-                    <TextView
-                        style="@style/field_content"
-                        android:text="@{school.sat_writing_avg_score}" />
-
-                </LinearLayout>
+                    style="@style/divider_h"/>
 
                 <LinearLayout
                     style="@style/field_layout">

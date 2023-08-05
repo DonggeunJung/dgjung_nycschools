@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:textColor="#222"
+            android:hint="Search"
             app:layout_constraintTop_toBottomOf="@+id/tvTitle"
             app:layout_constraintBottom_toTopOf="@+id/rvSchool"
             app:layout_constraintStart_toStartOf="parent"

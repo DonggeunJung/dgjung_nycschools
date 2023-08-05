@@ -1,10 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">20230731-DonggeunJung-NYCSchools</string>
     <string name="tag_dbn" tools:ignore="ExtraTranslation">dbn</string>
-    <string name="tag_sat_test_takers" tools:ignore="ExtraTranslation">Sat test takers</string>
-    <string name="tag_sat_reading_score" tools:ignore="ExtraTranslation">Sat reading score</string>
-    <string name="tag_sat_math_score" tools:ignore="ExtraTranslation">Sat math score</string>
-    <string name="tag_sat_writing_score" tools:ignore="ExtraTranslation">Sat writing score</string>
+    <string name="tag_sat_test_takers" tools:ignore="ExtraTranslation">Test takers</string>
+    <string name="tag_sat_reading_score" tools:ignore="ExtraTranslation">Reading</string>
+    <string name="tag_sat_math_score" tools:ignore="ExtraTranslation">Math</string>
+    <string name="tag_sat_writing_score" tools:ignore="ExtraTranslation">Writing</string>
+    <string name="tag_sat_total" tools:ignore="ExtraTranslation">Total</string>
     <string name="tag_location" tools:ignore="ExtraTranslation">Location</string>
     <string name="tag_phonenumber" tools:ignore="ExtraTranslation">Phone</string>
     <string name="tag_faxnumber" tools:ignore="ExtraTranslation">Fax</string>
