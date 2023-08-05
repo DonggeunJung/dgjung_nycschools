@@ -12,7 +12,7 @@
 [Image2 : Searched school list]
 <br>
 <div>
-<img src="https://github.com/DonggeunJung/dgjung_nycschools/blob/main/dgjung_nycschools_sc02.png?raw=true width="360px" height="600px"></img>
+<img src="https://github.com/DonggeunJung/dgjung_nycschools/blob/main/dgjung_nycschools_sc02.png?raw=true width="360px" height="410px"></img>
 </div>
 <br>
 <br>
